@@ -1,8 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var expect = require('expect');
-var $ = require('jQuery');
 var TestUtils = require('react-addons-test-utils');
+var expect = require('expect');
+var $ = require('jquery');
 
 var TodoApp = require('TodoApp');
 
@@ -15,7 +15,7 @@ describe('TodoApp', () => {
     var todoText = 'test text';
     var todoApp = TestUtils.renderIntoDocument(<TodoApp/>);
 
-    todoApp.setState({todos:[]});
+    todoApp.setState({todos: []});
     todoApp.handleAddTodo(todoText);
 
     expect(todoApp.state.todos[0].text).toBe(todoText);
@@ -27,15 +27,11 @@ describe('TodoApp', () => {
       text: 'Test features',
       completed: false
     };
-    var todoApp = TestUtils.renderIntoDocument(<TodoApp />);
+    var todoApp = TestUtils.renderIntoDocument(<TodoApp/>);
     todoApp.setState({todos: [todoData]});
 
     expect(todoApp.state.todos[0].completed).toBe(false);
     todoApp.handleToggle(11);
     expect(todoApp.state.todos[0].completed).toBe(true);
-
   });
-
-
-
 });
